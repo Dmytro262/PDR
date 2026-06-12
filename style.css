@@ -1,0 +1,196 @@
+/* ================= ОСНОВНИЙ ДИЗАЙН ================= */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f6f9;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;      /* Обмежує ширину додатка, щоб він не розтягувався на весь монітор */
+    margin: 40px auto;     /* Центрує весь блок на сторінці (зверху/знизу і по боках) */
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: #ffffff; /* Тло картки (якщо потрібно) */
+    border-radius: 12px;   /* Закруглення кутів додатка */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Легка тінь для краси */
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Кнопки на всю ширину мобільного */
+.menu-btn, .option-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.menu-btn:active, .option-btn:active {
+    background-color: #0056b3;
+}
+
+/* Стиль для кнопки Продовжити (зелена) */
+#next-btn {
+    background-color: #28a745;
+    margin-top: 10px;
+}
+#next-btn:active {
+    background-color: #218838;
+}
+
+.back-btn {
+    margin-top: 20px;
+    background: transparent;
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#question-text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Кольори для кнопок-відповідей */
+.option-btn.correct {
+    background-color: #28a745 !important;
+    color: white;
+}
+
+.option-btn.wrong {
+    background-color: #dc3545 !important;
+    color: white;
+}
+
+.option-btn.disabled {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* ================= ДИЗАЙН СЕКУНДОМІРА ТА НОМЕРІВ ================= */
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #ced4da;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#questions-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.nav-num-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #ced4da;
+    background-color: #f8f9fa;
+    color: #495057;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.nav-num-btn.active {
+    border-color: #007bff;
+    background-color: #e7f1ff;
+    color: #007bff;
+}
+
+.nav-num-btn.correct-nav {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: white !important;
+}
+
+.nav-num-btn.wrong-nav {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+}
+
+/* ================= ЕКРАН РЕЗУЛЬТАТІВ ================= */
+.results-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-size: 18px;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.results-box strong {
+    font-size: 20px;
+    float: right;
+}
+/* ================= КАРТИНКИ В ТЕСТАХ ================= */
+.question-img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain; /* Картинка не буде розтягуватися чи стискатися */
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 10px;
+}

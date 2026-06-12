@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тести ПДР</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="main-menu" class="screen">
+            <h1>Тести ПДР</h1>
+            <button class="menu-btn" onclick="startRandomQuiz()">20 випадкових питань</button>
+            <button class="menu-btn" onclick="showCategories()">Питання за категоріями</button>
+        </div>
+
+        <div id="categories-screen" class="screen hidden">
+            <h2>Виберіть категорію</h2>
+            <div id="categories-list"></div>
+            <button class="back-btn" onclick="showMainMenu()">Назад</button>
+        </div>
+
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-header">
+                <span id="question-counter">Питання 1 з 20</span>
+                <span id="timer">00:00</span>
+            </div>
+            
+            <div id="questions-nav"></div>
+
+            <img id="question-image" class="hidden" src="" alt="Ілюстрація до питання" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px;">
+
+              <p id="question-text">Текст питання...</p>
+            <div id="options-container"></div>
+            
+            <button id="next-btn" class="menu-btn hidden" onclick="goToNextQuestion()">Продовжити</button>
+            
+            <button class="back-btn" onclick="stopQuiz()">Перервати тест</button>
+        </div>
+
+        <div id="results-screen" class="screen hidden">
+            <h2>Результати тесту</h2>
+            <div class="results-box">
+                <p>Правильних відповідей: <strong id="res-correct" style="color: #28a745;">0</strong></p>
+                <p>Помилок: <strong id="res-wrong" style="color: #dc3545;">0</strong></p>
+                <p>Без відповіді: <strong id="res-unanswered" style="color: #6c757d;">0</strong></p>
+                <p>Час проходження: <strong id="res-time">00:00</strong></p>
+            </div>
+            <button class="menu-btn" onclick="showMainMenu()">На головну</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
